@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Text and Container Color Change</title>
+<style>
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        text-align: center;
+        line-height: 200px;
+    }
+</style>
+</head>
+<body>
+<div class="container" id="container">Container</div>
+<button id="button" onclick="changeContent()">Change Content</button>
+<script>
+    let button = document.getElementById('button');
+    let container = document.getElementById('container');
+    let initialText = 'Container';
+    let initialColor = 'red';
+    let changedText = 'Changed Text';
+    let changedColor = 'orange';
+    let isChanged = false;
+
+    function changeContent() {
+        if (isChanged) {
+            button.innerText = initialText;
+            container.innerText = initialText;
+            container.style.backgroundColor = initialColor;
+            isChanged = false;
+        } else {
+            button.innerText = changedText;
+            container.innerText = changedText;
+            container.style.backgroundColor = changedColor;
+            isChanged = true;
+        }
+    }
+</script>
+</body>
+</html>
